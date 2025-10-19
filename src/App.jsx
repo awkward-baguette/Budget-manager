@@ -51,7 +51,7 @@ function Inside() {
 
 function Main(){
   return(
-  <div class="container" style={{ 
+  <div className="container" style={{ 
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: 'cover', 
           }}>
@@ -64,7 +64,7 @@ function Main(){
 function App(){
 
   return(
-    <>
+    <div className="everything">
     <BrowserRouter>
     <nav>
     <div className="navbar">
@@ -88,18 +88,19 @@ function App(){
     
     <div className="the-main-part">
     <Routes>
-    <Route path="/" Component={Home}/>
-    <Route path="/analysis" Component={Ana}/>
-    <Route path="/transactions" Component={Trans}/>
-    <Route path="/bills-due" Component={Bills}/>
-    <Route path="/splitting" Component={Split}/>
-    <Route path="/investments" Component={Invest}/>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/analysis" element={<Ana/>}/>
+    <Route path="/transactions" element={<Trans/>}/>
+    <Route path="/bills-due" element={<Bills/>}/>
+    <Route path="/splitting" element={<Split/>}/>
+    <Route path="/investments" element={<Invest/>}/>
     </Routes>
     </div>
     </BrowserRouter>
-    </>
+    </div>
   )
 }
 
 export default App
+
 
