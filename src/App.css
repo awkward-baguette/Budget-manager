@@ -91,3 +91,104 @@ body{
     display: flex;
     flex-direction: row;
 }
+
+/*
+html{
+  box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    height:100%;
+    color:darkslategray;
+}
+
+
+
+.link{
+    text-decoration: none;
+    color:darkslategray;
+}
+
+.home{
+    height:8%;
+    width:90%;
+    background-color: #018a84;
+    border-radius:10px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    padding:5px;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.home>img{
+    height:80%;
+    width:30%;
+    border-radius:50%;
+    align-self: center;
+}
+
+.home>.link{
+    align-content: center;
+}
+.things{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.thing{
+    margin-left:0;
+    margin-top: 4px;
+    margin-bottom:4px;
+}
+.settings{
+    height:5%;
+    width:90%;
+    border-radius:10px;
+    margin:120% auto 5px auto;
+    display: flex;
+    padding:5px;
+    justify-content: space-around;
+}
+
+.settings.img{
+    height:90%;
+    width:30%;
+}
+
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navbar on left */
+.navbar {
+    flex: 0 0 15vw;  /* 15% width 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #5cbdb9;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/* Main content on right 
+.the-main-part {
+    flex: 1;  /* take remaining width 
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+
+*/
