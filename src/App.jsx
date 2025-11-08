@@ -10,56 +10,8 @@ import Home from './Home.jsx'
 import Ana from './Ana.jsx'
 import Trans from './Trans.jsx'
 import Bills from './Bills.jsx'
-import Split from './Split.jsx'
 import Invest from './Invest.jsx'
-
-function Inside() {
-  const [signReg, setSignReg] = useState("Register Here");
-  const [heading, setHeading] = useState("Sign In");
-  const [buttonc, setButton] = useState("Login");
-
-  return (
-    <div>
-    <div className="login-box">
-      <div className="welcome">
-       <h3><b>Welcome!</b></h3>
-       <p>First time?</p>
-       <button type="button" onClick={()=>{
-        if(signReg=="Register Here")
-        {setSignReg("Sign In Here");
-        setHeading("Sign Up");
-        setButton("Register");
-        }
-        else{
-          setSignReg("Register Here");
-        setHeading("Sign In");
-        setButton("Login");
-        }
-       }}>{signReg}</button>
-      </div>
-      <div className="login">
-       <h3>{heading}</h3>
-       <input type="text" placeholder="Username"></input>
-       <input type="password" placeholder="Password"></input>
-       <button type="submit">{buttonc}</button>
-    </div>
-      
-    </div>
-    </div>
-  )
-}
-
-function Main(){
-  return(
-  <div className="container" style={{ 
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: 'cover', 
-          }}>
-      {/*<img src={viteLogo}></img>*/}
-      <Inside/>
-  </div>
-  )
-}
+import Settings from "./Settings.jsx"
 
 function App(){
 
@@ -92,8 +44,8 @@ function App(){
     <Route path="/analysis" element={<Ana/>}/>
     <Route path="/transactions" element={<Trans/>}/>
     <Route path="/bills-due" element={<Bills/>}/>
-    <Route path="/splitting" element={<Split/>}/>
     <Route path="/investments" element={<Invest/>}/>
+    <Route path="/settings" element={<Settings/>}/>
     </Routes>
     </div>
     </BrowserRouter>
@@ -101,7 +53,100 @@ function App(){
   )
 }
 
-export default App
+function Main() {
+  const [signReg, setSignReg] = useState("Register Here");
+  const [heading, setHeading] = useState("Sign In");
+  const [buttonc, setButton] = useState("Login");
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  if (loggedIn) {
+    return <App />;
+  }
+  
+  return(
+    <div className="container" style={{ 
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover', 
+          }}>
+      {/*<img src={viteLogo}></img>*/}
+    <div>
+    <div className="login-box">
+      <div className="welcome">
+       <h3><b>Welcome!</b></h3>
+       <p>First time?</p>
+       <button type="button" onClick={()=>{
+        if(signReg=="Register Here")
+        {setSignReg("Sign In Here");
+        setHeading("Sign Up");
+        setButton("Register");
+        }
+        else{
+          setSignReg("Register Here");
+        setHeading("Sign In");
+        setButton("Login");
+        }
+       }}>{signReg}</button>
+      </div>
+      <div className="login">
+       <h3>{heading}</h3>
+       <input type="text" placeholder="Username"></input>
+       <input type="password" placeholder="Password"></input>
+       <button type="submit" onClick={()=>{
+        setLoggedIn(true);
+       }} >{buttonc}</button>
+    </div>
+      
+    </div>
+    </div>
+    </div>
+  );
+  return Page;
+}
+
+{/*function Main() {
+  const [signReg, setSignReg] = useState("Register Here");
+  const [heading, setHeading] = useState("Sign In");
+  const [buttonc, setButton] = useState("Login");
+
+    return (
+    <div className="container" style={{ 
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover', 
+          }}>
+      {/*<img src={viteLogo}></img>
+    <div>
+    <div className="login-box">
+      <div className="welcome">
+       <h3><b>Welcome!</b></h3>
+       <p>First time?</p>
+       <button type="button" onClick={()=>{
+        if(signReg=="Register Here")
+        {setSignReg("Sign In Here");
+        setHeading("Sign Up");
+        setButton("Register");
+        }
+        else{
+          setSignReg("Register Here");
+        setHeading("Sign In");
+        setButton("Login");
+        }
+       }}>{signReg}</button>
+      </div>
+      <div className="login">
+       <h3>{heading}</h3>
+       <input type="text" placeholder="Username"></input>
+       <input type="password" placeholder="Password"></input>
+       <button type="submit" >{buttonc}</button>
+    </div>
+      
+    </div>
+    </div>
+    </div>
+  );
+}*/}
+
+export default Main;
+
 
 {/*  the version I used
 import { useState,useEffect } from 'react'
