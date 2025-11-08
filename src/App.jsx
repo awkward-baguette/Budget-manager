@@ -28,7 +28,6 @@ function App(){
       <div className="thing"><Link className="link" to="/analysis"><b>Analysis</b></Link></div>
       <div className="thing"><Link className="link" to="/transactions"><b>Transactions</b></Link></div>
       <div className="thing"><Link className="link" to="/bills-due"><b>Bills Due</b></Link></div>
-      <div className="thing"><Link className="link" to="/splitting"><b>Splitting Bills</b></Link></div>
       <div className="thing"><Link className="link" to="/investments"><b>Investments</b></Link></div>
     </div>
     <div className="settings">
