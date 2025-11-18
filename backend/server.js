@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const billsRoutes = require("./routes/bills");
+const settingsRoutes = require("./routes/settingsRoutes");
 
 // MongoDB Connection
 mongoose.connect("mongodb://localhost:27017/budgetmanager", { 
@@ -155,7 +157,9 @@ app.delete('/api/expenses/:id', authenticateToken, async (req, res) => {
 app.get('/', (req, res) => {
     res.send('Budget Manager API is running!');
 });
-
+app.use("/api/bills", billsRoutes);
+app.use("/api", settingsRoutes);
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
+
