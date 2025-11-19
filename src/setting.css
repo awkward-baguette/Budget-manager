@@ -138,4 +138,16 @@
   transform: translateX(26px);
 }
 
+.logout-button{
+   margin-top: 8px;
+  padding: 10px 15px;
+  background-color:#3b9491;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width:1050px;
 
+}
